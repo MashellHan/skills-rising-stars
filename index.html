@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills 新星速报 | Agent Skills 发现平台</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--sidebar-bg) 100%);
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 32px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .reports-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .report-card {
+            display: block;
+            padding: 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .report-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .report-card h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .report-card .meta {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .sources {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 24px;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+        .sources h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .source-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .source-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--sidebar-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .source-item:hover {
+            background: var(--hover-bg);
+        }
+        .source-icon {
+            font-size: 24px;
+        }
+        .source-info h3 {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        .source-info span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+        <header class="hero">
+            <h1>🎯 Skills 新星速报</h1>
+            <p>每日扫描 Agent Skills 生态，发现最热门、最实用的 AI 编程技能</p>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">517K+</div>
+                    <div class="stat-label">Skills 总数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3K+</div>
+                    <div class="stat-label">日均新增</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">分类领域</div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="reports-list">
+            <h2 style="font-size: 24px; margin-bottom: 24px;">📚 最新报告</h2>
+            
+            <a href="reports/2026-03-16/" class="report-card">
+                <h2>5个Agent Skills新星速报！Claude API、VSCode Sessions等热门技能</h2>
+                <p class="meta">2026-03-16 · 5 个技能 · Claude API / VSCode / n8n / AutoGPT / prompts.chat</p>
+            </a>
+        </section>
+        
+        <section class="sources">
+            <h2>🔗 数据来源</h2>
+            <div class="source-list">
+                <a href="https://skillsmp.com" target="_blank" class="source-item">
+                    <span class="source-icon">📦</span>
+                    <div class="source-info">
+                        <h3>SkillsMP</h3>
+                        <span>517,000+ Skills</span>
+                    </div>
+                </a>
+                <a href="https://clawhub.com" target="_blank" class="source-item">
+                    <span class="source-icon">🐾</span>
+                    <div class="source-info">
+                        <h3>ClawHub</h3>
+                        <span>OpenClaw Skills</span>
+                    </div>
+                </a>
+                <a href="https://github.com/anthropics/skills" target="_blank" class="source-item">
+                    <span class="source-icon">🤖</span>
+                    <div class="source-info">
+                        <h3>Anthropic Skills</h3>
+                        <span>官方技能库</span>
+                    </div>
+                </a>
+                <a href="https://github.com/google-gemini/gemini-cli" target="_blank" class="source-item">
+                    <span class="source-icon">✨</span>
+                    <div class="source-info">
+                        <h3>Gemini CLI</h3>
+                        <span>Google Skills</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 14px;">
+            <p>Skills 新星速报 | 由 Neo 自动生成</p>
+            <p><a href="https://github.com/MashellHan/skills-rising-stars" style="color: var(--accent);">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>

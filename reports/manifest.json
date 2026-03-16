@@ -1,0 +1,43 @@
+{
+  "reports": [
+    {
+      "date": "2026-03-16",
+      "title": "Skills 新星速报",
+      "projectCount": 5,
+      "totalStars": 0,
+      "skills": [
+        {
+          "name": "claude-api.md",
+          "author": "anthropics/skills",
+          "repoStars": "92.1k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "sessions.md",
+          "author": "microsoft/vscode",
+          "repoStars": "182.7k",
+          "category": "Development"
+        },
+        {
+          "name": "prompt-lookup.md",
+          "author": "f/prompts.chat",
+          "repoStars": "152.7k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "n8n-conventions.md",
+          "author": "n8n-io/n8n",
+          "repoStars": "179.3k",
+          "category": "Development"
+        },
+        {
+          "name": "openapi-regen.md",
+          "author": "Significant-Gravitas/AutoGPT",
+          "repoStars": "182.5k",
+          "category": "Development"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-03-16T18:30:00+08:00"
+}

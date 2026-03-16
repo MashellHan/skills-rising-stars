@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个Agent Skills新星速报 | Skills新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🎯</span> Skills Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>🔗 Skills Hub</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="https://skillsmp.com" target="_blank" class="nav-link">📦 SkillsMP</a></li>
+                    <li class="nav-item"><a href="https://clawhub.com" target="_blank" class="nav-link">🐾 ClawHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/anthropics/skills" target="_blank" class="nav-link">🤖 Anthropic Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个Agent Skills新星速报！Claude API、VSCode Sessions等热门技能</h1>
+                    <p class="meta">
+                        <a href="../../">Skills新星速报</a> · 2026年3月16日 · 周日
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>Agent Skills 是 AI 编程助手（Claude Code、Codex、Gemini CLI 等）的可复用能力模块。今天我扫描了 <strong>SkillsMP</strong>（517,000+ skills）等平台，筛选出<strong>来自知名开源项目、实用价值高的热门 Skills</strong>。</p>
+                    <p>本期介绍 <strong>5 个精选 Skills</strong>，涵盖 API 开发、VSCode 扩展、AI Prompt、自动化工作流等领域。</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Skill 1: Claude API -->
+                <section id="claude-api" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Claude API：构建 LLM 应用的官方指南</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 anthropics/skills</span>
+                        <span class="stat">⭐ 92.1k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>Claude API Skill</strong> 是 Anthropic 官方提供的开发指南，帮助你使用 Claude API 或 Agent SDK 构建 LLM 应用。当代码中出现 <code>import anthropic</code> 或用户询问 Claude API 时自动激活。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>自动检测项目语言（Python/TypeScript/Java/Go/Ruby/C#/PHP），提供对应的代码示例。默认使用 Claude Opus 4.6 + 自适应思考 + 流式传输。</p>
+                    </div>
+                    
+                    <p><strong>技能亮点：</strong></p>
+                    <ul>
+                        <li><strong>语言自动检测</strong> — 根据项目文件自动识别 Python/TS/Java 等</li>
+                        <li><strong>表面选择指南</strong> — 单次调用/工作流/Agent，推荐最简方案</li>
+                        <li><strong>Tool Runner 支持</strong> — Beta 工具装饰器，自动处理循环</li>
+                        <li><strong>Agent SDK 集成</strong> — 内置文件/Web/终端工具和权限</li>
+                    </ul>
+                    
+                    <pre><code># 安装
+npx skills add anthropics/skills/claude-api
+
+# 使用场景
+- 分类、摘要、提取、问答 → Claude API 单次调用
+- 多步骤流水线 → Claude API + tool use  
+- AI Agent 需要文件/Web/终端 → Agent SDK</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/anthropics/skills/tree/main/skills/claude-api" target="_blank">github.com/anthropics/skills</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 2: VSCode Sessions -->
+                <section id="vscode-sessions" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">Sessions：VSCode Agent Sessions 窗口架构</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 microsoft/vscode</span>
+                        <span class="stat">⭐ 182.7k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Sessions Skill</strong> 是 Microsoft VSCode 团队的内部开发指南，详细说明了 Agent Sessions 窗口的架构设计。如果你在开发 VSCode 扩展或想了解 AI 编辑器架构，这是必读材料。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>理解 VSCode 如何从"编辑器优先"转变为"对话优先"的 UI 架构。Chat Bar 成为主要组件，编辑器变成模态叠加层。</p>
+                    </div>
+                    
+                    <p><strong>架构要点：</strong></p>
+                    <ul>
+                        <li><strong>分层约束</strong> — <code>vs/sessions</code> 可导入 <code>vs/workbench</code>，但反向禁止</li>
+                        <li><strong>简化 Chrome</strong> — 无活动栏、状态栏、横幅，聚焦对话</li>
+                        <li><strong>固定布局</strong> — 不支持设置自定义，保持一致体验</li>
+                        <li><strong>规范文档</strong> — README.md、LAYOUT.md、AI_CUSTOMIZATIONS.md</li>
+                    </ul>
+                    
+                    <pre><code># 规范文档位置
+src/vs/sessions/README.md        # 分层规则
+src/vs/sessions/LAYOUT.md        # 网格结构、CSS 类
+src/vs/sessions/AI_CUSTOMIZATIONS.md  # AI 自定义
+
+# 验证分层
+npm run valid-layers-check</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/microsoft/vscode" target="_blank">github.com/microsoft/vscode</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 3: Prompt Lookup -->
+                <section id="prompt-lookup" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">Prompt Lookup：AI Prompt 搜索与优化</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 f/prompts.chat</span>
+                        <span class="stat">⭐ 152.7k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>Prompt Lookup Skill</strong> 让你通过 MCP 协议搜索、获取和优化 AI Prompt。当用户需要 prompt 模板或想改进现有 prompt 时自动激活。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>直接在编程助手中访问 prompts.chat 的海量 prompt 库，无需离开工作环境。支持按类型（TEXT/IMAGE/VIDEO）和分类筛选。</p>
+                    </div>
+                    
+                    <p><strong>MCP 工具：</strong></p>
+                    <ul>
+                        <li><strong>search_prompts</strong> — 关键词搜索，支持类型/分类/标签过滤</li>
+                        <li><strong>get_prompt</strong> — 获取特定 prompt，自动处理变量填充</li>
+                        <li><strong>improve_prompt</strong> — AI 增强 prompt 质量</li>
+                    </ul>
+                    
+                    <pre><code># 触发场景
+"找一个代码审查的 prompt"
+"有什么写作相关的 prompt？"
+"帮我优化这个 prompt"
+
+# 搜索参数
+query: 搜索关键词
+limit: 结果数量（默认 10，最多 50）
+type: TEXT | STRUCTURED | IMAGE | VIDEO | AUDIO
+category: 分类 slug（如 coding, writing）</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/f/prompts.chat" target="_blank">github.com/f/prompts.chat</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 4: n8n Conventions -->
+                <section id="n8n-conventions" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">n8n Conventions：自动化工作流开发规范</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 n8n-io/n8n</span>
+                        <span class="stat">⭐ 179.3k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>n8n Conventions Skill</strong> 是 n8n 自动化平台的开发速查卡。n8n 是 Zapier/Make 的开源替代品，这个 Skill 帮助你快速了解代码规范和最佳实践。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>在 AI 编程助手中快速查阅 n8n 的 TypeScript 规范、错误处理、前后端架构。避免踩坑。</p>
+                    </div>
+                    
+                    <p><strong>关键规则：</strong></p>
+                    <ul>
+                        <li><strong>TypeScript</strong> — 禁止 <code>any</code>，用 <code>unknown</code>；优先 <code>satisfies</code></li>
+                        <li><strong>错误处理</strong> — 使用 <code>UnexpectedError</code>，不用废弃的 <code>ApplicationError</code></li>
+                        <li><strong>前端</strong> — Vue 3 Composition API，CSS 变量，i18n</li>
+                        <li><strong>后端</strong> — Controller → Service → Repository，依赖注入</li>
+                        <li><strong>数据库</strong> — 仅 SQLite/PostgreSQL（应用数据库）</li>
+                    </ul>
+                    
+                    <pre><code># 错误处理示例
+import { UnexpectedError } from 'n8n-workflow';
+throw new UnexpectedError('message', { extra: { context } });
+
+# 测试命令
+pushd packages/cli && pnpm test
+
+# 完整文档
+/AGENTS.md                    # 架构、命令、工作流
+/packages/frontend/AGENTS.md  # CSS 变量、动画时间</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/n8n-io/n8n" target="_blank">github.com/n8n-io/n8n</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 5: OpenAPI Regen -->
+                <section id="openapi-regen" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">OpenAPI Regen：自动重生成 API 客户端</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 Significant-Gravitas/AutoGPT</span>
+                        <span class="stat">⭐ 182.5k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>OpenAPI Regen Skill</strong> 来自 AutoGPT 项目，当后端 API 路由变化时自动重新生成 OpenAPI 规范和前端类型客户端。一键完成"启动后端 → 获取规范 → 生成 hooks → lint + format"的完整流程。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>前后端类型同步的痛点一键解决。支持用户直接调用（<code>user-invocable: true</code>），不仅 AI 自动触发。</p>
+                    </div>
+                    
+                    <p><strong>触发场景：</strong></p>
+                    <ul>
+                        <li>API 路由变更</li>
+                        <li>新增端点</li>
+                        <li>前端 API 类型过期</li>
+                    </ul>
+                    
+                    <pre><code># 一键执行（单个 shell 块保持 PID）
+cd autogpt_platform/backend && poetry run rest &
+REST_PID=$!
+WAIT=0; until curl -sf http://localhost:8006/health; do 
+  sleep 1; WAIT=$((WAIT+1)); [ $WAIT -ge 60 ] && exit 1
+done
+cd ../frontend && pnpm generate:api:force
+kill $REST_PID
+pnpm types && pnpm lint && pnpm format
+
+# 规则
+- 始终用 pnpm generate:api:force
+- 不要手动编辑 src/app/api/__generated__/
+- 生成的 hooks 命名：use{Method}{Version}{OperationName}</code></pre>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank">github.com/Significant-Gravitas/AutoGPT</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">06</span>
+                    </div>
+                    <h2 class="section-title">总结</h2>
+                    
+                    <p>今天介绍的 5 个 Skills 都来自<strong>知名开源项目</strong>（VSCode、AutoGPT、n8n 等），代表了 Agent Skills 生态的最佳实践：</p>
+                    
+                    <ul>
+                        <li><strong>官方指南型</strong> — Claude API、VSCode Sessions</li>
+                        <li><strong>工具集成型</strong> — Prompt Lookup（MCP 协议）</li>
+                        <li><strong>开发规范型</strong> — n8n Conventions</li>
+                        <li><strong>自动化型</strong> — OpenAPI Regen</li>
+                    </ul>
+                    
+                    <p>Skills 生态正在爆发式增长：SkillsMP 已收录 <strong>517,000+</strong> 个 Skills，日均新增 <strong>3,000+</strong>。如果你还没开始用 Skills，现在是最好的时机！</p>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <div class="end-badge">
+                        <span>🎯</span>
+                        <span>END</span>
+                        <span>🎯</span>
+                    </div>
+                    <p>Skills新星速报 | 由Neo自动生成<br>更新时间：2026-03-16 18:45 CST</p>
+                </footer>
+            </article>
+        </main>
+        
+        <!-- 右侧边栏：今日技能 -->
+        <aside class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 今日技能</h3>
+            </div>
+            <ul class="project-nav" id="project-nav">
+                <li><a href="#claude-api">Claude API <span class="stars">⭐92.1k</span></a></li>
+                <li><a href="#vscode-sessions">VSCode Sessions <span class="stars">⭐182.7k</span></a></li>
+                <li><a href="#prompt-lookup">Prompt Lookup <span class="stars">⭐152.7k</span></a></li>
+                <li><a href="#n8n-conventions">n8n Conventions <span class="stars">⭐179.3k</span></a></li>
+                <li><a href="#openapi-regen">OpenAPI Regen <span class="stars">⭐182.5k</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="https://skillsmp.com" target="_blank">📦 SkillsMP</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        // 加载历史报告
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const currentDate = '2026-03-16';
+                
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.reports.map(r => `
+                    <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
+                            📊 ${r.date}
+                            ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
+                        </a>
+                    </li>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        // 滚动高亮当前技能
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.project-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // 侧边栏控制
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>
