@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-17",
+      "title": "React、VSCode、AutoGPT、n8n、Next.js",
+      "projectCount": 5,
+      "totalStars": 926400,
+      "skills": [
+        {
+          "name": "extract-errors.md",
+          "author": "facebook/react",
+          "repoStars": "243.9k",
+          "category": "Development"
+        },
+        {
+          "name": "sessions.md",
+          "author": "microsoft/vscode",
+          "repoStars": "182.7k",
+          "category": "Development"
+        },
+        {
+          "name": "openapi-regen.md",
+          "author": "Significant-Gravitas/AutoGPT",
+          "repoStars": "182.5k",
+          "category": "Development"
+        },
+        {
+          "name": "n8n-conventions.md",
+          "author": "n8n-io/n8n",
+          "repoStars": "179.3k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "flags.md",
+          "author": "vercel/next.js",
+          "repoStars": "138.3k",
+          "category": "Development"
+        }
+      ]
+    },
+    {
       "date": "2026-03-16",
       "title": "Skills 新星速报",
       "projectCount": 5,
@@ -39,5 +77,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-16T18:30:00+08:00"
+  "lastUpdated": "2026-03-17T02:45:00+08:00"
 }
