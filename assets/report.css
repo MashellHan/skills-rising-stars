@@ -195,6 +195,20 @@
     border-radius: 4px;
 }
 
+/* 项目截图 */
+.project-screenshot {
+    margin: 24px 0;
+}
+
+.project-screenshot img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
 /* 图片 */
 .article-image {
     margin: 24px 0;
