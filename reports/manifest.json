@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-19",
+      "title": "Metal Kernel、并行Agent调度、Bun JSC绑定等底层技能",
+      "projectCount": 5,
+      "totalStars": 518700,
+      "skills": [
+        {
+          "name": "widget-generator.md",
+          "author": "f/prompts.chat",
+          "repoStars": "153.0k",
+          "category": "Development"
+        },
+        {
+          "name": "metal-kernel.md",
+          "author": "pytorch/pytorch",
+          "repoStars": "98.3k",
+          "category": "Development"
+        },
+        {
+          "name": "dispatching-parallel-agents.md",
+          "author": "obra/superpowers",
+          "repoStars": "89.7k",
+          "category": "Development"
+        },
+        {
+          "name": "storybook-upgrade.md",
+          "author": "storybookjs/storybook",
+          "repoStars": "89.5k",
+          "category": "Development"
+        },
+        {
+          "name": "implementing-jsc-classes-zig.md",
+          "author": "oven-sh/bun",
+          "repoStars": "88.2k",
+          "category": "Development"
+        }
+      ]
+    },
+    {
       "date": "2026-03-18",
       "title": "React、Next.js、Gemini CLI、PyTorch、awesome-llm-apps",
       "projectCount": 5,
@@ -115,5 +153,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-18T02:15:00+08:00"
+  "lastUpdated": "2026-03-19T02:01:00+08:00"
 }
