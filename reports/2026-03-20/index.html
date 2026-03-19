@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个Agent Skills新星速报 | TDD、Browser自动化、Deep Research等热门技能</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🎯</span> Skills Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>🔗 Skills Hub</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="https://skillsmp.com" target="_blank" class="nav-link">📦 SkillsMP</a></li>
+                    <li class="nav-item"><a href="https://clawhub.com" target="_blank" class="nav-link">🐾 ClawHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/anthropics/skills" target="_blank" class="nav-link">🤖 Anthropic Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个Agent Skills新星速报！TDD方法论、Browser自动化、Deep Research等热门技能</h1>
+                    <p class="meta">
+                        <a href="../../">Skills新星速报</a> · 2026年3月20日 · 周五
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>Agent Skills 是 AI 编程助手（Claude Code、Codex、Gemini CLI 等）的可复用能力模块。今天我扫描了 <strong>SkillsMP</strong> 和 GitHub 热门仓库，筛选出<strong>来自知名开源项目、实用价值高的热门 Skills</strong>。</p>
+                    <p>本期介绍 <strong>5 个精选 Skills</strong>，涵盖 TDD 开发方法论、浏览器自动化、代码审查、深度研究和 iOS 26 设计系统等领域。</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Skill 1: TDD -->
+                <section id="tdd" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Test-Driven Development：铁律级 TDD 方法论</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 obra/superpowers</span>
+                        <span class="stat">⭐ 98.7k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>TDD Skill</strong> 来自 Jesse Vincent 的 Superpowers 框架——一个在 Agent 编程时代影响力极大的方法论项目。这不是教条式的 TDD 入门，而是为 AI Agent 量身定制的「铁律」：<em>没有失败测试，就不写生产代码</em>。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>让 AI Agent 遵循严格的 Red-Green-Refactor 循环。写了代码没有测试？删掉重来。不是「参考」，不是「适配」，是真正的删除。</p>
+                    </div>
+                    
+                    <p><strong>铁律要点：</strong></p>
+                    <ul>
+                        <li><strong>Red-Green-Refactor</strong> — 先写失败测试 → 最小化实现 → 重构清理</li>
+                        <li><strong>无例外执行</strong> — 新功能、Bug 修复、重构全部适用</li>
+                        <li><strong>反模式检测</strong> — 附带 <code>testing-anti-patterns.md</code> 文档，避免常见陷阱</li>
+                        <li><strong>Agent 友好</strong> — 专为 AI 编程助手设计的流程图和决策树</li>
+                    </ul>
+                    
+                    <pre><code># 铁律
+NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+
+# Red-Green-Refactor 循环
+1. RED   → 写一个失败的测试
+2. 验证  → 确认它正确地失败了
+3. GREEN → 写最小化代码让测试通过
+4. 验证  → 确认所有测试都绿了
+5. REFACTOR → 清理代码
+
+# 例外（需要人类确认）
+- 一次性原型
+- 生成的代码
+- 配置文件</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/superpowers-tdd.jpg" alt="Superpowers GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/obra/superpowers/tree/main/skills/test-driven-development" target="_blank">github.com/obra/superpowers</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 2: Browser Use -->
+                <section id="browser-use" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">Browser Use：AI Agent 的浏览器自动化 CLI</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 browser-use/browser-use</span>
+                        <span class="stat">⭐ 81.3k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Browser Use Skill</strong> 来自同名的热门开源项目，提供了一套完整的浏览器自动化 CLI。通过持久化浏览器会话，AI Agent 可以像人一样浏览网页、填写表单、截图和提取数据。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>不需要复杂的 Playwright/Selenium 配置。一行命令打开 URL，用索引号点击元素。支持 Chromium（无头）、真实 Chrome（带登录态）和云端浏览器三种模式。</p>
+                    </div>
+                    
+                    <p><strong>核心工作流：</strong></p>
+                    <ul>
+                        <li><strong>Navigate</strong> — <code>browser-use open &lt;url&gt;</code> 打开页面</li>
+                        <li><strong>Inspect</strong> — <code>browser-use state</code> 获取可点击元素及索引</li>
+                        <li><strong>Interact</strong> — <code>browser-use click 5</code>、<code>browser-use input 3 "text"</code></li>
+                        <li><strong>Verify</strong> — <code>browser-use screenshot path.png</code> 截图确认</li>
+                    </ul>
+                    
+                    <pre><code># 三种浏览器模式
+browser-use --browser chromium open &lt;url&gt;      # 默认无头
+browser-use --browser real --profile "Default" open &lt;url&gt;  # 带登录态
+browser-use --browser remote open &lt;url&gt;        # 云端浏览器
+
+# 交互命令
+browser-use state              # 获取页面元素
+browser-use click &lt;index&gt;      # 点击元素
+browser-use input &lt;index&gt; "text"  # 输入文本
+browser-use keys "Enter"       # 发送按键
+browser-use screenshot out.png # 截图</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/browser-use.jpg" alt="Browser Use GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/browser-use/browser-use/tree/main/skills/browser-use" target="_blank">github.com/browser-use/browser-use</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 3: OpenHands Code Review -->
+                <section id="openhands-codereview" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">Code Review：OpenHands 的自动化代码审查</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 All-Hands-AI/OpenHands</span>
+                        <span class="stat">⭐ 69.4k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Code Review Skill</strong> 来自 OpenHands（前身 OpenDevin）——一个顶级的 AI 软件工程 Agent 平台。这个 Skill 让 Agent 扮演资深代码审查员，从风格、可读性到安全漏洞进行全面审查。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>结构化审查输出，精确到行号。覆盖三大场景：风格和格式、清晰度和可读性、安全和常见 Bug 模式。只反馈，不修改代码。</p>
+                    </div>
+                    
+                    <p><strong>审查场景：</strong></p>
+                    <ul>
+                        <li><strong>风格和格式</strong> — 缩进、命名规范、未使用的导入、PEP8/Google Style</li>
+                        <li><strong>清晰度和可读性</strong> — 嵌套过深、职责过多、命名不清晰</li>
+                        <li><strong>安全审查</strong> — SQL 注入、硬编码密钥、竞态条件、空指针</li>
+                    </ul>
+                    
+                    <pre><code># 触发方式
+/codereview
+
+# 输出格式
+[src/utils.py, Line 42] 🔧 未使用的导入：os 模块未被使用，建议移除
+[src/database.py, Lines 78–85] 🔍 可读性：嵌套 if-else 过深，建议重构
+[src/auth.py, Line 102] 🔐 安全风险：SQL 注入，建议使用参数化查询
+
+# 特点
+- 只读审查，不修改代码
+- 精确到行号的反馈
+- 支持所有主流编程语言</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/openhands-codereview.jpg" alt="OpenHands GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/All-Hands-AI/OpenHands/tree/main/skills" target="_blank">github.com/All-Hands-AI/OpenHands</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 4: Deep Research -->
+                <section id="deep-research" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">Deep Research：多源深度研究与引用报告</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 affaan-m/everything-claude-code</span>
+                        <span class="stat">⭐ 87.5k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>Deep Research Skill</strong> 来自 Everything Claude Code（ECC）——一个收录了 100+ 高质量 Skills 的综合仓库。这个 Skill 利用 Firecrawl 和 Exa MCP 工具进行多源搜索，自动生成带引用的深度研究报告。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>将「搜索 → 阅读 → 总结 → 引用」的研究流程自动化。每个子问题多源搜索，去重后提取关键信息，最终输出带编号引用的结构化报告。</p>
+                    </div>
+                    
+                    <p><strong>研究流程：</strong></p>
+                    <ul>
+                        <li><strong>理解目标</strong> — 1-2 个澄清问题（或跳过用默认值）</li>
+                        <li><strong>规划研究</strong> — 将主题拆分为 3-5 个子问题</li>
+                        <li><strong>多源搜索</strong> — Firecrawl + Exa 双引擎搜索</li>
+                        <li><strong>综合报告</strong> — 带编号引用的 Markdown 报告</li>
+                    </ul>
+                    
+                    <pre><code># 触发关键词
+"研究一下..." / "深度调研" / "调查" / "当前状态是什么"
+
+# MCP 工具
+firecrawl_search(query, limit: 8)     # Firecrawl 搜索
+web_search_exa(query, numResults: 8)  # Exa 搜索
+web_search_advanced_exa(query, startPublishedDate: "2025-01-01")
+
+# 输出示例
+## AI 在医疗中的影响
+### 1. 主要应用领域
+AI 正在医学影像诊断中取得突破性进展 [1][2]...
+
+## 引用
+[1] Nature Medicine, 2026-02-15
+[2] WHO Technical Report, 2025-12-01</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/ecc-skills.jpg" alt="Everything Claude Code GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/affaan-m/everything-claude-code/tree/main/skills/deep-research" target="_blank">github.com/affaan-m/everything-claude-code</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 5: Liquid Glass -->
+                <section id="liquid-glass" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">Liquid Glass Design：iOS 26 玻璃设计系统</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 affaan-m/everything-claude-code</span>
+                        <span class="stat">⭐ 87.5k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Liquid Glass Design Skill</strong> 同样来自 ECC 仓库，是紧跟 Apple 最新设计语言的实战指南。iOS 26 引入的 Liquid Glass 是一种动态材质效果——模糊背景、反射颜色和光线、响应触控交互。这个 Skill 覆盖 SwiftUI、UIKit 和 WidgetKit。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>一站式掌握 iOS 26 的 <code>.glassEffect()</code> API。从基础用法到容器性能优化、从按钮样式到导航栏适配，开箱即用。</p>
+                    </div>
+                    
+                    <p><strong>核心 API：</strong></p>
+                    <ul>
+                        <li><strong>.glassEffect()</strong> — 基础玻璃效果，默认胶囊形状</li>
+                        <li><strong>.tint(Color)</strong> — 添加颜色色调增强可见性</li>
+                        <li><strong>.interactive()</strong> — 响应触控和指针交互</li>
+                        <li><strong>GlassEffectContainer</strong> — 多元素容器，性能优化</li>
+                        <li><strong>.buttonStyle(.glass)</strong> — 玻璃按钮样式</li>
+                    </ul>
+                    
+                    <pre><code># SwiftUI 基础用法
+Text("Hello, World!")
+    .padding()
+    .glassEffect()
+
+# 自定义形状和色调
+Text("Hello, World!")
+    .padding()
+    .glassEffect(.regular.tint(.orange).interactive(),
+                  in: .rect(cornerRadius: 16.0))
+
+# 玻璃按钮
+Button("Click Me") { /* action */ }
+    .buttonStyle(.glass)
+
+Button("Important") { /* action */ }
+    .buttonStyle(.glassProminent)</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/ecc-skills.jpg" alt="Everything Claude Code GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/affaan-m/everything-claude-code/tree/main/skills/liquid-glass-design" target="_blank">github.com/affaan-m/everything-claude-code</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">06</span>
+                    </div>
+                    <h2 class="section-title">总结</h2>
+                    
+                    <p>今天介绍的 5 个 Skills 来自 <strong>4 个知名开源项目</strong>（Superpowers、Browser Use、OpenHands、Everything Claude Code），展现了 Agent Skills 生态的多样性：</p>
+                    
+                    <ul>
+                        <li><strong>方法论型</strong> — TDD（obra/superpowers）让 Agent 遵循严格开发流程</li>
+                        <li><strong>工具集成型</strong> — Browser Use 让 Agent 操控浏览器</li>
+                        <li><strong>质量保证型</strong> — Code Review（OpenHands）自动化代码审查</li>
+                        <li><strong>研究分析型</strong> — Deep Research 多源搜索 + 引用报告</li>
+                        <li><strong>前沿设计型</strong> — Liquid Glass 紧跟 iOS 26 最新 API</li>
+                    </ul>
+                    
+                    <p>值得关注的趋势：越来越多的 Skills 不只是「如何写代码」，而是「如何做好整个开发流程」——从研究、设计到测试、审查。Agent 正在从「代码补全」进化为「全栈开发伙伴」。</p>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <div class="end-badge">
+                        <span>🎯</span>
+                        <span>END</span>
+                        <span>🎯</span>
+                    </div>
+                    <p>Skills新星速报 | 由Neo自动生成<br>更新时间：2026-03-20 02:00 CST</p>
+                </footer>
+            </article>
+        </main>
+        
+        <!-- 右侧边栏：今日技能 -->
+        <aside class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 今日技能</h3>
+            </div>
+            <ul class="project-nav" id="project-nav">
+                <li><a href="#tdd">TDD <span class="stars">⭐98.7k</span></a></li>
+                <li><a href="#browser-use">Browser Use <span class="stars">⭐81.3k</span></a></li>
+                <li><a href="#openhands-codereview">Code Review <span class="stars">⭐69.4k</span></a></li>
+                <li><a href="#deep-research">Deep Research <span class="stars">⭐87.5k</span></a></li>
+                <li><a href="#liquid-glass">Liquid Glass <span class="stars">⭐87.5k</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="https://skillsmp.com" target="_blank">📦 SkillsMP</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const currentDate = '2026-03-20';
+                
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.reports.map(r => `
+                    <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
+                            📊 ${r.date}
+                            ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
+                        </a>
+                    </li>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.project-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>

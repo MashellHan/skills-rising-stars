@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-20",
+      "title": "TDD方法论、Browser自动化、Code Review、Deep Research、Liquid Glass",
+      "projectCount": 5,
+      "totalStars": 424400,
+      "skills": [
+        {
+          "name": "test-driven-development",
+          "author": "obra/superpowers",
+          "repoStars": "98.7k",
+          "category": "Development"
+        },
+        {
+          "name": "browser-use",
+          "author": "browser-use/browser-use",
+          "repoStars": "81.3k",
+          "category": "Development"
+        },
+        {
+          "name": "code-review.md",
+          "author": "All-Hands-AI/OpenHands",
+          "repoStars": "69.4k",
+          "category": "Development"
+        },
+        {
+          "name": "deep-research",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "87.5k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "liquid-glass-design",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "87.5k",
+          "category": "Development"
+        }
+      ]
+    },
+    {
       "date": "2026-03-19",
       "title": "Metal Kernel、并行Agent调度、Bun JSC绑定等底层技能",
       "projectCount": 5,
@@ -153,5 +191,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-19T02:01:00+08:00"
+  "lastUpdated": "2026-03-20T02:00:00+08:00"
 }
