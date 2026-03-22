@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-23",
+      "title": "React、Angular、Next.js 等顶级框架技能",
+      "projectCount": 5,
+      "totalStars": 845600,
+      "skills": [
+        {
+          "name": "extract-errors.md",
+          "author": "facebook/react",
+          "repoStars": "244.1k",
+          "category": "Development"
+        },
+        {
+          "name": "sessions.md",
+          "author": "microsoft/vscode",
+          "repoStars": "182.9k",
+          "category": "Development"
+        },
+        {
+          "name": "n8n-conventions.md",
+          "author": "n8n-io/n8n",
+          "repoStars": "180.1k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "flags.md",
+          "author": "vercel/next.js",
+          "repoStars": "138.4k",
+          "category": "Development"
+        },
+        {
+          "name": "angular-developer.md",
+          "author": "angular/angular",
+          "repoStars": "100.1k",
+          "category": "Development"
+        }
+      ]
+    },
+    {
       "date": "2026-03-20",
       "title": "TDD方法论、Browser自动化、Code Review、Deep Research、Liquid Glass",
       "projectCount": 5,
@@ -191,5 +229,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-20T02:00:00+08:00"
+  "lastUpdated": "2026-03-23T02:15:00+08:00"
 }
