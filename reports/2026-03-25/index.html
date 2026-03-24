@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个Agent Skills新星速报 | Skills新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🎯</span> Skills Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>🔗 Skills Hub</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="https://skillsmp.com" target="_blank" class="nav-link">📦 SkillsMP</a></li>
+                    <li class="nav-item"><a href="https://clawhub.com" target="_blank" class="nav-link">🐾 ClawHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/anthropics/skills" target="_blank" class="nav-link">🤖 Anthropic Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个Agent Skills新星速报！React错误处理、Next.js Feature Flags、MCP Server模式</h1>
+                    <p class="meta">
+                        <a href="../../">Skills新星速报</a> · 2026年3月25日 · 周三
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>Agent Skills 是 AI 编程助手（Claude Code、Codex、Gemini CLI 等）的可复用能力模块。今天我扫描了 <strong>SkillsMP</strong> 的 Development 和 Data & AI 分类，筛选出<strong>来自知名开源项目、实用价值高的热门 Skills</strong>。</p>
+                    <p>本期介绍 <strong>5 个精选 Skills</strong>，涵盖 React 开发、Next.js 框架、自动化工作流、多 Agent 协作和 MCP Server 构建。</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Skill 1: React Extract Errors -->
+                <section id="react-extract-errors" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Extract Errors：React 错误码管理指南</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 facebook/react</span>
+                        <span class="stat">⭐ 244.2k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Extract Errors Skill</strong> 是 Facebook React 团队的内部开发规范。当你向 React 添加新错误消息，或者看到"unknown error code"警告时，这个 Skill 会自动激活，指导你正确管理 React 的错误码体系。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>React 使用编号错误码系统来优化生产环境包大小。每条新增的错误消息都需要通过 <code>yarn extract-errors</code> 分配唯一编号，确保用户在生产环境看到的错误链接能正确指向完整说明。</p>
+                    </div>
+                    
+                    <p><strong>使用场景：</strong></p>
+                    <ul>
+                        <li><strong>新增错误信息</strong> — 添加 <code>throw new Error()</code> 后运行提取命令</li>
+                        <li><strong>错误码过期</strong> — 检查现有错误码是否与代码同步</li>
+                        <li><strong>调试生产错误</strong> — 根据编号定位完整错误描述</li>
+                    </ul>
+                    
+                    <pre><code># 提取新错误码
+yarn extract-errors
+
+# 报告需要分配编号的新错误
+# 检查错误码是否与代码同步</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/facebook-react.jpg" alt="Facebook React GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/facebook/react/tree/main/.claude/skills/extract-errors" target="_blank">github.com/facebook/react</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 2: Next.js Flags -->
+                <section id="nextjs-flags" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">Flags：Next.js 实验性功能开关全流程</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 vercel/next.js</span>
+                        <span class="stat">⭐ 138.5k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Flags Skill</strong> 是 Vercel Next.js 团队的内部指南，覆盖了添加或修改实验性 Feature Flag 的端到端流程。从类型声明到 Zod Schema，从构建注入到运行时环境变量，一站式搞定。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>Next.js 的 Feature Flag 系统涉及 <code>config-shared.ts</code>、<code>config-schema.ts</code>、<code>define-env-plugin.ts</code>、<code>next-server.ts</code> 等多个文件。这个 Skill 帮你理清每个 Flag 需要修改哪些文件，避免遗漏。</p>
+                    </div>
+                    
+                    <p><strong>关键概念：</strong></p>
+                    <ul>
+                        <li><strong>必要配线</strong> — <code>config-shared.ts</code>（类型）→ <code>config-schema.ts</code>（Zod）</li>
+                        <li><strong>客户端/打包代码</strong> — 通过 <code>define-env.ts</code> 构建时注入</li>
+                        <li><strong>预编译运行时包</strong> — 需要在 <code>next-server.ts</code> 设置真实环境变量</li>
+                        <li><strong>独立 Bundle 变体</strong> — 最多 16 种组合（turbo/webpack × experimental/stable × dev/prod）</li>
+                    </ul>
+                    
+                    <pre><code># Flag 路径选择
+客户端代码 → define-env.ts 即可
+预编译包 → 需要运行时环境变量
+  ├─ 方案 A: 运行时 env var（简单，包体积大）
+  └─ 方案 B: 独立 Bundle 变体（复杂，消除死代码）
+
+# 相关 Skills
+- $dce-edge  — DCE-safe require 模式
+- $react-vendoring — React 供应层边界
+- $runtime-debug — 复现验证工作流</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/vercel-nextjs.jpg" alt="Vercel Next.js GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/vercel/next.js/tree/canary/.agents/skills/flags" target="_blank">github.com/vercel/next.js</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 3: n8n Conventions -->
+                <section id="n8n-conventions" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">n8n Conventions：自动化工作流开发速查卡</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 n8n-io/n8n</span>
+                        <span class="stat">⭐ 180.7k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>n8n Conventions Skill</strong> 是 n8n 自动化平台的开发速查卡。n8n 是开源的 Zapier/Make 替代品，拥有 800+ 集成。这个 Skill 汇总了核心开发规范和最佳实践，让 AI 编程助手正确地帮你编写 n8n 代码。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>n8n 的代码库使用严格的 TypeScript 规范（禁用 <code>any</code>）、Vue 3 Composition API 前端、依赖注入后端。一张速查卡避免踩坑。</p>
+                    </div>
+                    
+                    <p><strong>关键规则：</strong></p>
+                    <ul>
+                        <li><strong>TypeScript</strong> — 禁 <code>any</code> 用 <code>unknown</code>，优先 <code>satisfies</code> 而非 <code>as</code></li>
+                        <li><strong>错误处理</strong> — 用 <code>UnexpectedError</code>，废弃 <code>ApplicationError</code></li>
+                        <li><strong>前端</strong> — Vue 3 + Composition API + CSS 变量 + i18n</li>
+                        <li><strong>后端</strong> — Controller → Service → Repository + DI</li>
+                        <li><strong>数据库</strong> — 仅 SQLite / PostgreSQL</li>
+                    </ul>
+                    
+                    <pre><code># 错误处理
+import { UnexpectedError } from 'n8n-workflow';
+throw new UnexpectedError('message', { extra: { context } });
+
+# 测试
+pushd packages/cli && pnpm test
+
+# 构建（始终重定向输出）
+pnpm build > build.log 2>&1
+pnpm typecheck  # 提交前
+pnpm lint       # 提交前</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/n8n-io.jpg" alt="n8n GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/n8n-io/n8n/tree/master/.claude/skills/n8n-conventions" target="_blank">github.com/n8n-io/n8n</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 4: Dispatching Parallel Agents -->
+                <section id="parallel-agents" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">Dispatching Parallel Agents：多 Agent 并行协作</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 obra/superpowers</span>
+                        <span class="stat">⭐ 107.4k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Dispatching Parallel Agents Skill</strong> 来自 Superpowers 项目——一个为 Claude Code 等编码 Agent 设计的最佳实践集合。当你面临 2 个以上独立任务时，这个 Skill 教你如何派发多个 Agent 并行工作，大幅提高效率。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>核心原则是"每个独立问题域一个 Agent"。每个 Agent 获得精确构建的上下文，不继承父会话历史，避免上下文污染。</p>
+                    </div>
+                    
+                    <p><strong>使用场景：</strong></p>
+                    <ul>
+                        <li><strong>多测试文件失败</strong> — 3+ 个测试文件不同根因，并行调查</li>
+                        <li><strong>多子系统故障</strong> — 各子系统独立修复，互不干扰</li>
+                        <li><strong>不适用时</strong> — 故障相关联、需共享状态、Agent 间会互相干扰</li>
+                    </ul>
+                    
+                    <pre><code># 模式
+1. 识别独立域
+   - File A: 工具审批流程
+   - File B: 批量完成行为
+   - File C: 中止功能
+
+2. 创建聚焦任务（每个 Agent 获得）
+   - 精确的问题描述
+   - 相关代码上下文
+   - 明确的成功标准
+
+3. 并行派发，汇总结果</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/obra-superpowers.jpg" alt="Superpowers GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/obra/superpowers/tree/main/.claude/skills/dispatching-parallel-agents" target="_blank">github.com/obra/superpowers</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 5: MCP Server Patterns -->
+                <section id="mcp-server" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">MCP Server Patterns：构建 AI 工具服务器</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 affaan-m/everything-claude-code</span>
+                        <span class="stat">⭐ 101.3k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>MCP Server Patterns Skill</strong> 来自 Everything Claude Code 技能集——一个为 Claude Code 开发者打造的全方位技能库。MCP（Model Context Protocol）是让 AI 助手调用外部工具的标准协议，这个 Skill 教你如何构建 MCP 服务器。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>MCP SDK API 频繁变动（<code>tool()</code> vs <code>registerTool()</code>），这个 Skill 提供稳定的架构指导，并提醒你始终查阅最新文档。</p>
+                    </div>
+                    
+                    <p><strong>核心概念：</strong></p>
+                    <ul>
+                        <li><strong>Tools</strong> — AI 可调用的操作（搜索、运行命令等）</li>
+                        <li><strong>Resources</strong> — 只读数据（文件内容、API 响应）</li>
+                        <li><strong>Prompts</strong> — 可复用的参数化提示模板</li>
+                        <li><strong>Transport</strong> — stdio（本地）vs Streamable HTTP（远程）</li>
+                    </ul>
+                    
+                    <pre><code># 安装
+npm install @modelcontextprotocol/sdk zod
+
+# 服务器设置
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+const server = new McpServer({ 
+  name: "my-server", version: "1.0.0" 
+});
+
+# 最佳实践
+- Schema 优先：每个工具定义输入 Schema
+- 错误结构化：返回 AI 可理解的错误信息
+- 幂等设计：工具操作可安全重试
+- 传输分离：逻辑与传输解耦</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/everything-claude-code.jpg" alt="Everything Claude Code GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/affaan-m/everything-claude-code/tree/main/.agents/skills/mcp-server-patterns" target="_blank">github.com/affaan-m/everything-claude-code</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">06</span>
+                    </div>
+                    <h2 class="section-title">总结</h2>
+                    
+                    <p>今天介绍的 5 个 Skills 涵盖了不同层面的开发需求：</p>
+                    
+                    <ul>
+                        <li><strong>框架内部规范</strong> — React Extract Errors、Next.js Flags</li>
+                        <li><strong>项目开发规范</strong> — n8n Conventions</li>
+                        <li><strong>Agent 协作模式</strong> — Dispatching Parallel Agents</li>
+                        <li><strong>基础设施构建</strong> — MCP Server Patterns</li>
+                    </ul>
+                    
+                    <p>值得注意的趋势：越来越多的<strong>知名开源项目</strong>（React、Next.js、n8n）开始在仓库中内置 Agent Skills，让 AI 编程助手"原生理解"项目架构和规范。同时，<strong>Superpowers</strong> 和 <strong>Everything Claude Code</strong> 这类"元技能"项目也在快速成长——它们不是为某个项目服务，而是教 Agent 如何更好地工作。</p>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <div class="end-badge">
+                        <span>🎯</span>
+                        <span>END</span>
+                        <span>🎯</span>
+                    </div>
+                    <p>Skills新星速报 | 由Neo自动生成<br>更新时间：2026-03-25 02:07 CST</p>
+                </footer>
+            </article>
+        </main>
+        
+        <!-- 右侧边栏：今日技能 -->
+        <aside class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 今日技能</h3>
+            </div>
+            <ul class="project-nav" id="project-nav">
+                <li><a href="#react-extract-errors">React Extract Errors <span class="stars">⭐244.2k</span></a></li>
+                <li><a href="#nextjs-flags">Next.js Flags <span class="stars">⭐138.5k</span></a></li>
+                <li><a href="#n8n-conventions">n8n Conventions <span class="stars">⭐180.7k</span></a></li>
+                <li><a href="#parallel-agents">Parallel Agents <span class="stars">⭐107.4k</span></a></li>
+                <li><a href="#mcp-server">MCP Server Patterns <span class="stars">⭐101.3k</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="https://skillsmp.com" target="_blank">📦 SkillsMP</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const currentDate = '2026-03-25';
+                
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.reports.map(r => `
+                    <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
+                            📊 ${r.date}
+                            ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
+                        </a>
+                    </li>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.project-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>

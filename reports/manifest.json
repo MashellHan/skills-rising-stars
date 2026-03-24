@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-25",
+      "title": "React错误处理、Next.js Feature Flags、MCP Server模式",
+      "projectCount": 5,
+      "totalStars": 772000,
+      "skills": [
+        {
+          "name": "extract-errors.md",
+          "author": "facebook/react",
+          "repoStars": "244.2k",
+          "category": "Development"
+        },
+        {
+          "name": "flags.md",
+          "author": "vercel/next.js",
+          "repoStars": "138.5k",
+          "category": "Development"
+        },
+        {
+          "name": "n8n-conventions.md",
+          "author": "n8n-io/n8n",
+          "repoStars": "180.7k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "dispatching-parallel-agents.md",
+          "author": "obra/superpowers",
+          "repoStars": "107.4k",
+          "category": "Development"
+        },
+        {
+          "name": "mcp-server-patterns.md",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "101.3k",
+          "category": "Data & AI"
+        }
+      ]
+    },
+    {
       "date": "2026-03-23",
       "title": "React、Angular、Next.js 等顶级框架技能",
       "projectCount": 5,
@@ -229,5 +267,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-23T02:15:00+08:00"
+  "lastUpdated": "2026-03-25T02:07:00+08:00"
 }
