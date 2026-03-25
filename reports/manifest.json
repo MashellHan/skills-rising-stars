@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-26",
+      "title": "React错误码、Next.js特性标志、并行Agent调度、数据分析、Widget生成器",
+      "projectCount": 5,
+      "totalStars": 752800,
+      "skills": [
+        {
+          "name": "extract-errors.md",
+          "author": "facebook/react",
+          "repoStars": "112.4k",
+          "category": "Development"
+        },
+        {
+          "name": "flags.md",
+          "author": "vercel/next.js",
+          "repoStars": "103.5k",
+          "category": "Development"
+        },
+        {
+          "name": "dispatching-parallel-agents.md",
+          "author": "obra/superpowers",
+          "repoStars": "138.5k",
+          "category": "Development"
+        },
+        {
+          "name": "data-analyst.md",
+          "author": "Shubhamsaboo/awesome-llm-apps",
+          "repoStars": "244.2k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "widget-generator.md",
+          "author": "f/prompts.chat",
+          "repoStars": "154.2k",
+          "category": "Development"
+        }
+      ]
+    },
+    {
       "date": "2026-03-25",
       "title": "React错误处理、Next.js Feature Flags、MCP Server模式",
       "projectCount": 5,
@@ -267,5 +305,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-25T02:07:00+08:00"
+  "lastUpdated": "2026-03-26T02:01:00+08:00"
 }
