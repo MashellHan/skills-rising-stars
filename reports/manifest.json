@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-28",
+      "title": "React错误提取、Next.js特性标志、PowerToys迁移、Widget生成器、dmux多Agent编排",
+      "projectCount": 5,
+      "totalStars": 778100,
+      "skills": [
+        {
+          "name": "extract-errors.md",
+          "author": "facebook/react",
+          "repoStars": "244.2k",
+          "category": "Development"
+        },
+        {
+          "name": "flags.md",
+          "author": "vercel/next.js",
+          "repoStars": "138.5k",
+          "category": "Development"
+        },
+        {
+          "name": "widget-generator.md",
+          "author": "f/prompts.chat",
+          "repoStars": "154.3k",
+          "category": "Development"
+        },
+        {
+          "name": "wpf-to-winui3-migration.md",
+          "author": "microsoft/PowerToys",
+          "repoStars": "131.0k",
+          "category": "Development"
+        },
+        {
+          "name": "dmux-workflows.md",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "110.1k",
+          "category": "Data & AI"
+        }
+      ]
+    },
+    {
       "date": "2026-03-26",
       "title": "React错误码、Next.js特性标志、并行Agent调度、数据分析、Widget生成器",
       "projectCount": 5,
@@ -305,5 +343,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-26T02:01:00+08:00"
+  "lastUpdated": "2026-03-28T02:36:00+08:00"
 }

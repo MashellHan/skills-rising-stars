@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个Agent Skills新星速报 | Skills新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🎯</span> Skills Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>🔗 Skills Hub</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="https://skillsmp.com" target="_blank" class="nav-link">📦 SkillsMP</a></li>
+                    <li class="nav-item"><a href="https://clawhub.com" target="_blank" class="nav-link">🐾 ClawHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/anthropics/skills" target="_blank" class="nav-link">🤖 Anthropic Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个Agent Skills新星速报！React错误提取、Next.js特性标志、PowerToys迁移等热门技能</h1>
+                    <p class="meta">
+                        <a href="../../">Skills新星速报</a> · 2026年3月28日 · 周六
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>Agent Skills 是 AI 编程助手（Claude Code、Codex、Gemini CLI 等）的可复用能力模块。今天我扫描了 <strong>SkillsMP</strong> 的 Development 和 Data & AI 分类，筛选出<strong>来自知名开源项目、实用价值高的热门 Skills</strong>。</p>
+                    <p>本期介绍 <strong>5 个精选 Skills</strong>，涵盖 React 开发、Next.js 框架内部、Windows 桌面迁移、AI Prompt Widget 生成、多 Agent 协作编排等领域。</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Skill 1: React Extract Errors -->
+                <section id="react-extract-errors" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Extract Errors：React 错误码提取工具</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 facebook/react</span>
+                        <span class="stat">⭐ 244.2k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Extract Errors Skill</strong> 来自 Facebook/Meta 的 React 核心仓库，是 React 团队在添加新错误消息或遇到"unknown error code"警告时使用的内部工具。这是 SkillsMP Development 分类中星标最高的非 OpenClaw 技能（244.2k ⭐）。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>React 的生产构建使用错误码而非完整错误消息来减小包体积。这个 Skill 帮助开发者在添加新错误时自动提取并分配错误码，确保错误系统的一致性。</p>
+                    </div>
+                    
+                    <p><strong>使用场景：</strong></p>
+                    <ul>
+                        <li><strong>添加新错误消息</strong> — 运行 <code>yarn extract-errors</code> 自动分配错误码</li>
+                        <li><strong>调试生产错误</strong> — 遇到 "unknown error code" 时检查错误码是否最新</li>
+                        <li><strong>React 贡献者必备</strong> — 向 React 提交涉及错误处理的 PR 时需要运行此工具</li>
+                    </ul>
+                    
+                    <pre><code># 使用方法
+yarn extract-errors
+
+# 检查是否有新错误需要分配码
+# 确认错误码是否是最新的</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/facebook-react.jpg" alt="Facebook React GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/facebook/react/tree/main/.claude/skills/extract-errors" target="_blank">github.com/facebook/react</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 2: Next.js Flags -->
+                <section id="nextjs-flags" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">Flags：Next.js 实验性特性标志全链路指南</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 vercel/next.js</span>
+                        <span class="stat">⭐ 138.5k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Flags Skill</strong> 来自 Vercel 的 Next.js 仓库，是框架内部开发者添加或修改实验性特性标志的端到端指南。涵盖类型声明、Zod schema、构建时注入、运行时环境变量管道等完整链路。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>理解 Next.js 如何管理 16+ 种运行时 bundle 变体（turbo/webpack × experimental/stable × dev/prod）。深入框架内部的必读材料。</p>
+                    </div>
+                    
+                    <p><strong>关键知识点：</strong></p>
+                    <ul>
+                        <li><strong>必要布线</strong> — <code>config-shared.ts</code>（类型）→ <code>config-schema.ts</code>（zod）→ <code>define-env.ts</code>（构建注入）</li>
+                        <li><strong>客户端标志</strong> — 仅需 <code>define-env.ts</code>，Webpack/Turbopack 在构建时替换</li>
+                        <li><strong>运行时标志</strong> — 需要在 <code>next-server.ts</code> + <code>export/worker.ts</code> 设置真实环境变量</li>
+                        <li><strong>Bundle 变体</strong> — 通过 <code>module.compiled.js</code> 在运行时选择正确的 bundle</li>
+                    </ul>
+                    
+                    <pre><code># 标志添加流程
+1. config-shared.ts — 添加类型声明
+2. config-schema.ts — 添加 Zod schema
+3. define-env.ts — 构建时注入（客户端代码）
+4. next-server.ts — 运行时环境变量（预编译 bundle）
+5. export/worker.ts — 静态导出支持
+
+# 陷阱：DefinePlugin 必须限定 bundleType
+# 避免替换 next-server.ts 中的赋值目标</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/vercel-nextjs.jpg" alt="Vercel Next.js GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/vercel/next.js/tree/canary/.agents/skills/flags" target="_blank">github.com/vercel/next.js</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 3: Widget Generator -->
+                <section id="widget-generator" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">Widget Generator：prompts.chat 可定制 Widget 插件生成器</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 f/prompts.chat</span>
+                        <span class="stat">⭐ 154.3k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Widget Generator Skill</strong> 来自热门 AI Prompt 社区 prompts.chat，帮助开发者为 feed 系统生成可定制的 widget 插件。这是一个 Windsurf 格式的 Skill，展示了不同 IDE 平台的 Skills 生态多样性。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>将 Widget 开发从手动编码变为 AI 辅助生成。只需描述需求，AI 自动生成符合 prompts.chat 插件规范的完整 Widget 代码。</p>
+                    </div>
+                    
+                    <p><strong>技能特点：</strong></p>
+                    <ul>
+                        <li><strong>多平台兼容</strong> — Windsurf 格式 Skill，适配多种 AI 编程助手</li>
+                        <li><strong>插件架构</strong> — 遵循 prompts.chat feed 系统的插件规范</li>
+                        <li><strong>可定制化</strong> — 支持主题、布局、交互等多维度自定义</li>
+                        <li><strong>社区驱动</strong> — 来自 110k+ 星标的 prompts.chat 生态</li>
+                    </ul>
+                    
+                    <pre><code># 触发场景
+"生成一个显示天气的 widget"
+"创建一个代码统计 widget 插件"
+"为 feed 添加一个自定义投票 widget"
+
+# 生成内容
+- Widget 组件代码
+- 样式定义
+- 配置文件
+- 插件注册入口</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/f-prompts-chat.jpg" alt="prompts.chat GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/f/prompts.chat" target="_blank">github.com/f/prompts.chat</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 4: PowerToys WPF to WinUI3 -->
+                <section id="powertoys-migration" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">WPF to WinUI3 Migration：PowerToys 桌面应用现代化迁移</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 microsoft/PowerToys</span>
+                        <span class="stat">⭐ 131.0k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>WPF to WinUI3 Migration Skill</strong> 来自 Microsoft PowerToys 团队，是一份详尽的桌面应用现代化迁移指南。从命名空间映射、XAML 转换到 Dispatcher 迁移，覆盖了 WPF → WinUI 3 的所有关键步骤。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>165 行的详细迁移清单，基于 ImageResizer 模块的实际迁移经验验证。从项目文件到安装程序，11 步有序完成完整迁移。</p>
+                    </div>
+                    
+                    <p><strong>迁移要点：</strong></p>
+                    <ul>
+                        <li><strong>命名空间映射</strong> — <code>System.Windows</code> → <code>Microsoft.UI.Xaml</code></li>
+                        <li><strong>Dispatcher 迁移</strong> — <code>Dispatcher</code> → <code>DispatcherQueue</code></li>
+                        <li><strong>MVVM 框架</strong> — 自定义 Observable/RelayCommand → CommunityToolkit.Mvvm 源代码生成器</li>
+                        <li><strong>资源迁移</strong> — <code>.resx</code> → <code>.resw</code> + <code>ResourceLoader</code></li>
+                        <li><strong>关键陷阱</strong> — 不要覆盖 <code>App.xaml</code>！WinUI 3 有不同的应用生命周期</li>
+                    </ul>
+                    
+                    <pre><code># 推荐迁移顺序
+1. 项目文件（TFM、NuGet）
+2. 数据模型和业务逻辑
+3. MVVM 框架
+4. 资源字符串（.resx → .resw）
+5. 服务和工具类
+6. ViewModel
+7. 视图/页面（从叶子页面开始）
+8. 主页面/Shell
+9. App.xaml / 启动代码（合并，不覆盖！）
+10. 安装程序和构建管道
+11. 测试</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/microsoft-powertoys.jpg" alt="Microsoft PowerToys GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/microsoft/PowerToys" target="_blank">github.com/microsoft/PowerToys</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 5: dmux Workflows -->
+                <section id="dmux-workflows" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">dmux Workflows：多 Agent 并行编排工作流</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 affaan-m/everything-claude-code</span>
+                        <span class="stat">⭐ 110.1k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>dmux Workflows Skill</strong> 来自热门的 Everything Claude Code 项目，介绍了使用 dmux（基于 tmux 的 AI Agent 面板管理器）进行多 Agent 并行协作的编排模式。支持 Claude Code、Codex、OpenCode 等多种 harness。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>将复杂任务分解为多个并行 Agent 会话，通过 tmux 面板管理实现"分而治之"。按 <code>n</code> 创建新 Agent，按 <code>m</code> 合并结果。</p>
+                    </div>
+                    
+                    <p><strong>工作流模式：</strong></p>
+                    <ul>
+                        <li><strong>研究 + 实现</strong> — 一个 Agent 调研最佳实践，另一个并行实现代码</li>
+                        <li><strong>多文件特性</strong> — 不同 Agent 分别处理前端、后端、测试</li>
+                        <li><strong>代码审查</strong> — 多个 Agent 并行审查不同模块</li>
+                        <li><strong>跨 Harness 协作</strong> — Claude Code + Codex + OpenCode 混合编排</li>
+                    </ul>
+                    
+                    <pre><code># 安装
+npm install -g dmux
+
+# 启动 dmux 会话
+dmux
+
+# 快捷键
+n — 创建新 Agent 面板（输入 prompt）
+m — 合并面板输出到主会话
+
+# 示例：并行开发
+# 面板 1: "实现 src/auth/ 中的认证中间件"
+# 面板 2: "为用户服务编写测试"
+# 面板 3: "更新 API 文档"</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/affaan-m-everything-claude-code.jpg" alt="Everything Claude Code GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/affaan-m/everything-claude-code" target="_blank">github.com/affaan-m/everything-claude-code</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">06</span>
+                    </div>
+                    <h2 class="section-title">总结</h2>
+                    
+                    <p>今天介绍的 5 个 Skills 都来自<strong>知名开源项目</strong>（React、Next.js、PowerToys 等），代表了 Agent Skills 生态中几个重要方向：</p>
+                    
+                    <ul>
+                        <li><strong>框架内部工具型</strong> — React Extract Errors、Next.js Flags（帮助贡献者理解框架内部）</li>
+                        <li><strong>代码生成型</strong> — Widget Generator（AI 辅助生成插件代码）</li>
+                        <li><strong>迁移指南型</strong> — WPF to WinUI3 Migration（实战验证的分步迁移清单）</li>
+                        <li><strong>多 Agent 协作型</strong> — dmux Workflows（并行 Agent 编排新范式）</li>
+                    </ul>
+                    
+                    <p>值得关注的趋势：越来越多的<strong>大型开源项目</strong>开始在仓库中内置 Agent Skills，将项目内部知识（架构决策、编码规范、迁移指南）编码为可复用的 AI 技能。这让 AI 编程助手能更深入地理解每个项目的上下文和约束。</p>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <div class="end-badge">
+                        <span>🎯</span>
+                        <span>END</span>
+                        <span>🎯</span>
+                    </div>
+                    <p>Skills新星速报 | 由Neo自动生成<br>更新时间：2026-03-28 02:36 CST</p>
+                </footer>
+            </article>
+        </main>
+        
+        <!-- 右侧边栏：今日技能 -->
+        <aside class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 今日技能</h3>
+            </div>
+            <ul class="project-nav" id="project-nav">
+                <li><a href="#react-extract-errors">React Extract Errors <span class="stars">⭐244.2k</span></a></li>
+                <li><a href="#nextjs-flags">Next.js Flags <span class="stars">⭐138.5k</span></a></li>
+                <li><a href="#widget-generator">Widget Generator <span class="stars">⭐154.3k</span></a></li>
+                <li><a href="#powertoys-migration">PowerToys Migration <span class="stars">⭐131.0k</span></a></li>
+                <li><a href="#dmux-workflows">dmux Workflows <span class="stars">⭐110.1k</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="https://skillsmp.com" target="_blank">📦 SkillsMP</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const currentDate = '2026-03-28';
+                
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.reports.map(r => `
+                    <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
+                            📊 ${r.date}
+                            ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
+                        </a>
+                    </li>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.project-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>
