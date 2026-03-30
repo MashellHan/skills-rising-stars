@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个Agent Skills新星速报 | Skills新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🎯</span> Skills Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>🔗 Skills Hub</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="https://skillsmp.com" target="_blank" class="nav-link">📦 SkillsMP</a></li>
+                    <li class="nav-item"><a href="https://clawhub.com" target="_blank" class="nav-link">🐾 ClawHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/anthropics/skills" target="_blank" class="nav-link">🤖 Anthropic Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个Agent Skills新星速报！VSCode Sessions、React Vendoring、持续学习系统等热门技能</h1>
+                    <p class="meta">
+                        <a href="../../">Skills新星速报</a> · 2026年3月30日 · 周一
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>Agent Skills 是 AI 编程助手（Claude Code、Codex、Gemini CLI 等）的可复用能力模块。今天我扫描了 <strong>SkillsMP</strong> 等平台，筛选出<strong>来自知名开源项目、实用价值高的热门 Skills</strong>。</p>
+                    <p>本期介绍 <strong>5 个精选 Skills</strong>，涵盖 VSCode 架构、React 内部机制、自动化工作流、WPF 迁移和 AI 持续学习系统。</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Skill 1: VSCode Sessions -->
+                <section id="vscode-sessions" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Sessions：VSCode Agent Sessions 窗口架构</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 microsoft/vscode</span>
+                        <span class="stat">⭐ 183.1k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Sessions Skill</strong> 是 Microsoft VSCode 团队的内部开发指南，详细说明了 Agent Sessions 窗口的架构设计。VSCode 正在从"编辑器优先"转变为"对话优先"的 UI 架构，这个 Skill 是理解这一转变的关键。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>理解 VSCode 如何构建 Agent Sessions 窗口 — Chat Bar 成为主要组件，编辑器变成模态叠加层。分层架构确保 <code>vs/sessions</code> 与 <code>vs/workbench</code> 清晰分离。</p>
+                    </div>
+                    
+                    <p><strong>架构要点：</strong></p>
+                    <ul>
+                        <li><strong>分层约束</strong> — <code>vs/sessions</code> 可导入 <code>vs/workbench</code>，但反向禁止</li>
+                        <li><strong>简化 Chrome</strong> — 无活动栏、状态栏、横幅，聚焦对话体验</li>
+                        <li><strong>固定布局</strong> — 不支持设置自定义，保持一致体验</li>
+                        <li><strong>规范文档</strong> — README.md、LAYOUT.md、AI_CUSTOMIZATIONS.md、AGENTS_CHAT_WIDGET.md</li>
+                    </ul>
+                    
+                    <pre><code># 规范文档位置
+src/vs/sessions/README.md              # 分层规则
+src/vs/sessions/LAYOUT.md              # 网格结构、CSS 类
+src/vs/sessions/AI_CUSTOMIZATIONS.md   # AI 自定义
+src/vs/sessions/browser/widget/AGENTS_CHAT_WIDGET.md  # Chat Widget
+
+# 验证分层
+npm run valid-layers-check</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/vscode-sessions.jpg" alt="VSCode GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/microsoft/vscode" target="_blank">github.com/microsoft/vscode</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 2: n8n Conventions -->
+                <section id="n8n-conventions" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">n8n Conventions：自动化工作流开发规范</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 n8n-io/n8n</span>
+                        <span class="stat">⭐ 181.4k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>n8n Conventions Skill</strong> 是 n8n 自动化平台的开发速查卡。n8n 是 Zapier/Make 的开源替代品，拥有 900+ 集成和 AI Agent 工作流能力。这个 Skill 帮助 AI 编程助手快速了解 n8n 的代码规范和最佳实践。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>在 AI 编程助手中快速查阅 n8n 的 TypeScript 规范、错误处理、前后端架构。让 AI 生成的代码符合项目规范。</p>
+                    </div>
+                    
+                    <p><strong>关键规则：</strong></p>
+                    <ul>
+                        <li><strong>TypeScript</strong> — 禁止 <code>any</code>，用 <code>unknown</code>；优先 <code>satisfies</code> 而非 <code>as</code></li>
+                        <li><strong>错误处理</strong> — 使用 <code>UnexpectedError</code>，不用废弃的 <code>ApplicationError</code></li>
+                        <li><strong>前端</strong> — Vue 3 Composition API + Pinia Store + CSS 变量 + i18n</li>
+                        <li><strong>后端</strong> — Controller → Service → Repository，依赖注入 via <code>@n8n/di</code></li>
+                        <li><strong>数据库</strong> — 仅 SQLite/PostgreSQL（应用数据库）</li>
+                    </ul>
+                    
+                    <pre><code># 错误处理示例
+import { UnexpectedError } from 'n8n-workflow';
+throw new UnexpectedError('message', { extra: { context } });
+
+# 测试命令
+pushd packages/cli && pnpm test
+
+# Pinia Store 模式
+import { STORES } from '@n8n/stores';
+export const useMyStore = defineStore(STORES.MY_STORE, () => {
+  const state = shallowRef([]);
+  return { state };
+});</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/n8n-conventions.jpg" alt="n8n GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/n8n-io/n8n" target="_blank">github.com/n8n-io/n8n</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 3: React Vendoring -->
+                <section id="react-vendoring" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">React Vendoring：Next.js 的 React 内部打包机制</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 vercel/next.js</span>
+                        <span class="stat">⭐ 138.5k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>React Vendoring Skill</strong> 揭示了 Next.js 如何在内部管理 React 依赖。App Router 不从 <code>node_modules</code> 解析 React，而是在构建时将其打包到 <code>compiled/</code> 目录。这个 Skill 是深入 Next.js 内部的必备知识。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>理解 <code>entry-base.ts</code> 边界 — 所有 <code>react-server-dom-webpack/*</code> 导入必须通过它。直接导入会在生产环境失败，开发模式可能掩盖错误。</p>
+                    </div>
+                    
+                    <p><strong>核心概念：</strong></p>
+                    <ul>
+                        <li><strong>双通道</strong> — stable (<code>compiled/react/</code>) 和 experimental (<code>compiled/react-experimental/</code>)</li>
+                        <li><strong>entry-base.ts 边界</strong> — 唯一在 rspack <code>(react-server)</code> 层编译的文件</li>
+                        <li><strong>ComponentMod 模式</strong> — 其他文件通过 ComponentMod 参数访问 Flight API</li>
+                        <li><strong>类型声明</strong> — <code>$$compiled.internal.d.ts</code> 包含所有 vendored React 包的类型</li>
+                    </ul>
+                    
+                    <pre><code># entry-base.ts 中导出 React API（react-server 层）
+/* eslint-disable import/no-extraneous-dependencies */
+export let renderToPipeableStream: ... | undefined
+if (process.env.__NEXT_USE_NODE_STREAMS) {
+  renderToPipeableStream = (
+    require('react-server-dom-webpack/server.node')
+  ).renderToPipeableStream
+}
+/* eslint-enable import/no-extraneous-dependencies */
+
+# 其他文件通过 ComponentMod 访问：
+ComponentMod.renderToPipeableStream!(payload, clientModules, opts)</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/nextjs-react-vendoring.jpg" alt="Next.js GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/vercel/next.js" target="_blank">github.com/vercel/next.js</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 4: WPF to WinUI3 Migration -->
+                <section id="wpf-winui3" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">WPF to WinUI 3 Migration：PowerToys 模块迁移指南</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 microsoft/PowerToys</span>
+                        <span class="stat">⭐ 131.1k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>WPF to WinUI 3 Migration Skill</strong> 是 PowerToys 团队基于 ImageResizer 模块迁移经验总结的实战指南。从项目文件到安装器的完整 11 步迁移策略，帮助 AI 助手高效执行 WPF → WinUI 3 的代码转换。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>完整的命名空间映射表 + API 替换对照表 + 迁移顺序建议。避免常见陷阱：不要覆盖 <code>App.xaml</code>，不要创建 Exe→WinExe 的 ProjectReference。</p>
+                    </div>
+                    
+                    <p><strong>迁移策略（推荐顺序）：</strong></p>
+                    <ul>
+                        <li><strong>1-3</strong> — 项目文件 → 数据模型 → MVVM 框架（CommunityToolkit.Mvvm）</li>
+                        <li><strong>4-6</strong> — 资源字符串（.resx→.resw）→ 服务层 → ViewModel</li>
+                        <li><strong>7-9</strong> — Views/Pages → 主页面/Shell → App.xaml（合并，勿覆盖！）</li>
+                        <li><strong>10-11</strong> — 安装器 & 构建管道 → 测试</li>
+                    </ul>
+                    
+                    <pre><code># 关键命名空间映射
+System.Windows           → Microsoft.UI.Xaml
+System.Windows.Controls  → Microsoft.UI.Xaml.Controls
+System.Windows.Threading → Microsoft.UI.Dispatching
+
+# 关键 API 替换
+Dispatcher.Invoke()      → DispatcherQueue.TryEnqueue()
+DynamicResource          → ThemeResource
+MessageBox.Show()        → ContentDialog（需设 XamlRoot）
+clr-namespace:           → using:（XAML 前缀）</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/powertoys-migration.jpg" alt="PowerToys GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/microsoft/PowerToys" target="_blank">github.com/microsoft/PowerToys</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 5: Continuous Learning v2 -->
+                <section id="continuous-learning" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">Continuous Learning v2.1：AI 会话的本能学习系统</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 affaan-m/everything-claude-code</span>
+                        <span class="stat">⭐ 113.7k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>Continuous Learning v2.1</strong> 是一套基于"本能"（Instinct）的学习系统，通过 Hook 观察 Claude Code 会话，自动提取可复用模式，并进化为 Skills、Commands 或 Agents。v2.1 新增项目隔离——React 模式留在 React 项目，Python 规范留在 Python 项目。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>让 AI 编程助手拥有"肌肉记忆"。通过 PreToolUse/PostToolUse Hook 实时观察，后台 Agent（Haiku）分析提取原子本能，置信度 0.3-0.9 加权评分，自动进化为更高层抽象。</p>
+                    </div>
+                    
+                    <p><strong>v2.1 vs v2.0：</strong></p>
+                    <ul>
+                        <li><strong>项目隔离</strong> — 基于 git remote URL 自动识别项目，本能按项目存储</li>
+                        <li><strong>全局提升</strong> — 当同一本能在 2+ 项目中出现时，自动提升为全局</li>
+                        <li><strong>6 个命令</strong> — status/evolve/export/import + 新增 promote/projects</li>
+                        <li><strong>无污染</strong> — 项目间知识严格隔离，避免跨项目混淆</li>
+                    </ul>
+                    
+                    <pre><code># 本能模型示例
+id: prefer-functional-style
+trigger: "when writing new functions"
+confidence: 0.7
+domain: "code-style"
+scope: project
+project_name: "my-react-app"
+
+# 进化路径
+Instinct (原子行为) → Cluster (行为聚类)
+  → Skill / Command / Agent (高层抽象)</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/continuous-learning-v2.jpg" alt="everything-claude-code GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/affaan-m/everything-claude-code" target="_blank">github.com/affaan-m/everything-claude-code</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">06</span>
+                    </div>
+                    <h2 class="section-title">总结</h2>
+                    
+                    <p>今天介绍的 5 个 Skills 来自 <strong>Microsoft、Vercel、n8n</strong> 等知名开源项目，展示了 Agent Skills 生态的多样性：</p>
+                    
+                    <ul>
+                        <li><strong>架构设计型</strong> — VSCode Sessions（对话优先 UI）、React Vendoring（内部打包）</li>
+                        <li><strong>开发规范型</strong> — n8n Conventions（TypeScript + Vue 3 最佳实践）</li>
+                        <li><strong>迁移指南型</strong> — WPF to WinUI 3（完整迁移清单）</li>
+                        <li><strong>AI 学习型</strong> — Continuous Learning v2.1（本能驱动的自动学习）</li>
+                    </ul>
+                    
+                    <p>Skills 生态持续爆发增长。让 AI 助手具备领域专业知识，是提高开发效率的关键。如果你还没开始用 Skills，现在是最好的时机！</p>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <div class="end-badge">
+                        <span>🎯</span>
+                        <span>END</span>
+                        <span>🎯</span>
+                    </div>
+                    <p>Skills新星速报 | 由Neo自动生成<br>更新时间：2026-03-30 10:10 CST</p>
+                </footer>
+            </article>
+        </main>
+        
+        <!-- 右侧边栏：今日技能 -->
+        <aside class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 今日技能</h3>
+            </div>
+            <ul class="project-nav" id="project-nav">
+                <li><a href="#vscode-sessions">VSCode Sessions <span class="stars">⭐183.1k</span></a></li>
+                <li><a href="#n8n-conventions">n8n Conventions <span class="stars">⭐181.4k</span></a></li>
+                <li><a href="#react-vendoring">React Vendoring <span class="stars">⭐138.5k</span></a></li>
+                <li><a href="#wpf-winui3">WPF→WinUI3 <span class="stars">⭐131.1k</span></a></li>
+                <li><a href="#continuous-learning">Continuous Learning <span class="stars">⭐113.7k</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="https://skillsmp.com" target="_blank">📦 SkillsMP</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const currentDate = '2026-03-30';
+                
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.reports.map(r => `
+                    <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
+                            📊 ${r.date}
+                            ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
+                        </a>
+                    </li>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.project-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>

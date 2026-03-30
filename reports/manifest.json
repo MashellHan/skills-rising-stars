@@ -1,6 +1,44 @@
 {
   "reports": [
     {
+      "date": "2026-03-30",
+      "title": "VSCode Sessions、n8n开发规范、React Vendoring、PowerToys WPF迁移、持续学习v2.1",
+      "projectCount": 5,
+      "totalStars": 747800,
+      "skills": [
+        {
+          "name": "sessions.md",
+          "author": "microsoft/vscode",
+          "repoStars": "183.1k",
+          "category": "Development"
+        },
+        {
+          "name": "n8n-conventions.md",
+          "author": "n8n-io/n8n",
+          "repoStars": "181.4k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "react-vendoring.md",
+          "author": "vercel/next.js",
+          "repoStars": "138.5k",
+          "category": "Development"
+        },
+        {
+          "name": "wpf-to-winui3-migration.md",
+          "author": "microsoft/PowerToys",
+          "repoStars": "131.1k",
+          "category": "Development"
+        },
+        {
+          "name": "continuous-learning-v2.md",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "113.7k",
+          "category": "Data & AI"
+        }
+      ]
+    },
+    {
       "date": "2026-03-28",
       "title": "React错误提取、Next.js特性标志、PowerToys迁移、Widget生成器、dmux多Agent编排",
       "projectCount": 5,
@@ -343,5 +381,5 @@
       ]
     }
   ],
-  "lastUpdated": "2026-03-28T02:36:00+08:00"
+  "lastUpdated": "2026-03-30T10:10:00+08:00"
 }
