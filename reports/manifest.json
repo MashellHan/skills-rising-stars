@@ -1,6 +1,45 @@
 {
   "reports": [
     {
+      "date": "2026-04-02",
+      "title": "n8n工作流规范、Skill Lookup搜索安装、WPF迁移、ClickHouse分析、Blueprint工程规划",
+      "projectCount": 5,
+      "totalStars": 705300,
+      "skills": [
+        {
+          "name": "n8n-conventions.md",
+          "author": "n8n-io/n8n",
+          "repoStars": "181.8k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "skill-lookup.md",
+          "author": "f/prompts.chat",
+          "repoStars": "154.9k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "wpf-to-winui3-migration.md",
+          "author": "microsoft/PowerToys",
+          "repoStars": "131.2k",
+          "category": "Development"
+        },
+        {
+          "name": "clickhouse-io.md",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "118.7k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "blueprint.md",
+          "author": "affaan-m/everything-claude-code",
+          "repoStars": "118.7k",
+          "category": "Development"
+        }
+      ],
+      "topIndex": 0
+    },
+    {
       "date": "2026-03-31",
       "title": "React错误码提取、Next.js特性标志、Widget生成器、Claude API模式、跨平台内容分发",
       "projectCount": 5,
@@ -430,5 +469,5 @@
       "topIndex": 0
     }
   ],
-  "lastUpdated": "2026-03-31T02:55:00+08:00"
+  "lastUpdated": "2026-04-02T02:30:00+08:00"
 }
