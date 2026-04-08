@@ -1,6 +1,45 @@
 {
   "reports": [
     {
+      "date": "2026-04-08",
+      "title": "Gemini行为评估、子Agent驱动开发、Bun打包测试、跨仓库E2E、PR自动创建",
+      "projectCount": 5,
+      "totalStars": 539800,
+      "skills": [
+        {
+          "name": "behavioral-evals",
+          "author": "google-gemini/gemini-cli",
+          "repoStars": "139.7k",
+          "category": "Data & AI"
+        },
+        {
+          "name": "subagent-driven-development",
+          "author": "obra/superpowers",
+          "repoStars": "100.6k",
+          "category": "Development"
+        },
+        {
+          "name": "writing-bundler-tests",
+          "author": "oven-sh/bun",
+          "repoStars": "88.9k",
+          "category": "Development"
+        },
+        {
+          "name": "cross-repo-testing",
+          "author": "All-Hands-AI/OpenHands",
+          "repoStars": "70.8k",
+          "category": "DevOps"
+        },
+        {
+          "name": "pr-creator",
+          "author": "google-gemini/gemini-cli",
+          "repoStars": "139.7k",
+          "category": "Development"
+        }
+      ],
+      "topIndex": 0
+    },
+    {
       "date": "2026-04-02",
       "title": "n8n工作流规范、Skill Lookup搜索安装、WPF迁移、ClickHouse分析、Blueprint工程规划",
       "projectCount": 5,
@@ -469,5 +508,5 @@
       "topIndex": 0
     }
   ],
-  "lastUpdated": "2026-04-02T02:30:00+08:00"
+  "lastUpdated": "2026-04-08T12:47:00+08:00"
 }

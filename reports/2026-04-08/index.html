@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5个Agent Skills新星速报 | Skills新星速报</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/report.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()">☰ 目录</button>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <div class="app-container">
+        <!-- 左侧边栏：历史报告 -->
+        <nav class="sidebar" id="sidebar">
+            <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+            <div class="sidebar-header">
+                <a href="../../" class="logo">
+                    <span>🎯</span> Skills Stars
+                </a>
+            </div>
+            <div class="nav-section">
+                <h3>📚 历史报告</h3>
+                <ul class="nav-list" id="history-list">
+                    <!-- 由 JS 动态填充 -->
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>🔗 Skills Hub</h3>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="https://skillsmp.com" target="_blank" class="nav-link">📦 SkillsMP</a></li>
+                    <li class="nav-item"><a href="https://clawhub.com" target="_blank" class="nav-link">🐾 ClawHub</a></li>
+                    <li class="nav-item"><a href="https://github.com/anthropics/skills" target="_blank" class="nav-link">🤖 Anthropic Skills</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="report-article">
+                <!-- Header -->
+                <header class="report-header">
+                    <h1>5个Agent Skills新星速报！Gemini行为评估、子Agent驱动开发、Bun打包测试等</h1>
+                    <p class="meta">
+                        <a href="../../">Skills新星速报</a> · 2026年4月8日 · 周三
+                    </p>
+                </header>
+                
+                <!-- Introduction -->
+                <div class="intro">
+                    <p><strong>Neo整理</strong></p>
+                    <p>Agent Skills 是 AI 编程助手（Claude Code、Codex、Gemini CLI 等）的可复用能力模块。今天我扫描了 <strong>SkillsMP</strong>（784,000+ skills）等平台，筛选出<strong>来自知名开源项目、实用价值高的热门 Skills</strong>。</p>
+                    <p>本期介绍 <strong>5 个精选 Skills</strong>，涵盖 AI 评估测试、多Agent编排、打包器测试、跨仓库E2E测试、PR自动创建等领域。</p>
+                </div>
+                
+                <hr>
+                
+                <!-- Skill 1: Behavioral Evals -->
+                <section id="behavioral-evals" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">01</span>
+                    </div>
+                    <h2 class="section-title">Behavioral Evals：AI Agent 行为评估框架</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 google-gemini/gemini-cli</span>
+                        <span class="stat">⭐ 139.7k</span>
+                        <span class="stat">🏷️ Data & AI</span>
+                    </div>
+                    
+                    <p><strong>Behavioral Evals Skill</strong> 是 Google Gemini CLI 团队的内部评估框架指南。它教你如何创建、运行、修复和晋升行为评估测试——验证 AI Agent 的<strong>决策逻辑</strong>（如工具选择），而非纯功能测试。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>当你修改 prompt 或工具配置后，需要验证 Agent 行为是否符合预期。这套框架提供了从"编写断言 → 本地验证 → CI 集成 → 测试晋升"的完整流水线。</p>
+                    </div>
+                    
+                    <p><strong>工作流决策树：</strong></p>
+                    <ul>
+                        <li><strong>需要验证 prompt/工具变更？</strong> → 进入行为评估流程</li>
+                        <li><strong>UI/交互密集型？</strong> → 用 <code>appEvalTest</code>（AppRig）</li>
+                        <li><strong>纯逻辑验证？</strong> → 用 <code>evalTest</code>（TestRig）</li>
+                        <li><strong>新测试？</strong> → 策略设为 <code>USUALLY_PASSES</code>；稳定后晋升为 <code>ALWAYS_PASSES</code></li>
+                    </ul>
+                    
+                    <pre><code># 行为评估示例
+# 1. 用 files 对象模拟工作区（如 Node.js 项目）
+# 2. 用 rig.setBreakpoint() 或 rig.readToolLogs() 做断言
+# 3. 用 Vitest 本地运行单个测试
+
+# 参考文档
+references/creating.md   # 断言策略、Rig 选择、Mock MCP
+references/fixing.md     # 自动排查、架构诊断
+references/promoting.md  # 晋升标准和阈值</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/gemini-behavioral-evals.jpg" alt="Gemini CLI Behavioral Evals GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/behavioral-evals" target="_blank">github.com/google-gemini/gemini-cli</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 2: Subagent-Driven Development -->
+                <section id="subagent-dev" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">02</span>
+                    </div>
+                    <h2 class="section-title">Subagent-Driven Development：子Agent驱动的开发模式</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 obra/superpowers</span>
+                        <span class="stat">⭐ 100.6k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Subagent-Driven Development Skill</strong> 来自 Jesse Vincent 的 Superpowers 项目，定义了一种"每个任务启动独立子Agent + 双阶段审查"的开发范式。核心原则：<strong>隔离上下文 + 规范审查 + 质量审查 = 高质量快速迭代</strong>。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>避免长会话中的上下文污染。每个任务由全新子Agent执行，完成后依次经过"规范一致性审查"和"代码质量审查"两个独立审查Agent。</p>
+                    </div>
+                    
+                    <p><strong>流程设计：</strong></p>
+                    <ul>
+                        <li><strong>Implementer</strong> — 独立子Agent，接收精确构造的指令和上下文</li>
+                        <li><strong>Spec Reviewer</strong> — 检查实现是否符合规范</li>
+                        <li><strong>Code Quality Reviewer</strong> — 检查代码质量</li>
+                        <li><strong>TodoWrite</strong> — 标记任务完成，进入下一个</li>
+                    </ul>
+                    
+                    <pre><code># 核心文件
+SKILL.md                        # 流程总览和决策树
+implementer-prompt.md           # 实现者子Agent的提示词
+spec-reviewer-prompt.md         # 规范审查子Agent
+code-quality-reviewer-prompt.md # 质量审查子Agent
+
+# 适用场景
+- 有实现计划，任务间基本独立
+- 想在当前会话中执行（非并行会话）
+- 需要高质量、快速迭代</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/superpowers-subagent.jpg" alt="Superpowers Subagent-Driven Development GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development" target="_blank">github.com/obra/superpowers</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 3: Writing Bundler Tests -->
+                <section id="bundler-tests" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">03</span>
+                    </div>
+                    <h2 class="section-title">Writing Bundler Tests：Bun 打包器测试指南</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 oven-sh/bun</span>
+                        <span class="stat">⭐ 88.9k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>Writing Bundler Tests Skill</strong> 是 Bun 团队的内部测试编写指南，详细说明如何使用 <code>itBundled()</code> 框架测试 Bun 的打包器、转译器和代码转换功能。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>Bun 的打包器测试框架设计精巧——用声明式配置描述测试场景，支持文件系统模拟、多目标构建（bun/browser/node）、运行时验证等。是测试框架设计的优秀范例。</p>
+                    </div>
+                    
+                    <p><strong>测试能力：</strong></p>
+                    <ul>
+                        <li><strong>文件模拟</strong> — <code>files</code> 定义输入，<code>runtimeFiles</code> 定义运行时文件</li>
+                        <li><strong>多格式支持</strong> — ESM / CJS / IIFE</li>
+                        <li><strong>Minification</strong> — 空白、标识符、语法三维度压缩</li>
+                        <li><strong>运行验证</strong> — 检查 stdout、stderr、exit code</li>
+                    </ul>
+                    
+                    <pre><code>import { itBundled, dedent } from "./expectBundled";
+
+describe("bundler", () => {
+  itBundled("category/TestName", {
+    files: {
+      "index.js": `console.log("hello");`,
+    },
+    run: {
+      stdout: "hello",
+    },
+  });
+});
+
+// 测试ID格式：category/TestName
+// 如 banner/CommentBanner, minify/Empty</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/bun-bundler-tests.jpg" alt="Bun Writing Bundler Tests GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/oven-sh/bun/tree/main/.claude/skills/writing-bundler-tests" target="_blank">github.com/oven-sh/bun</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 4: Cross-Repo Testing -->
+                <section id="cross-repo-testing" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">04</span>
+                    </div>
+                    <h2 class="section-title">Cross-Repo Testing：跨仓库 E2E 测试</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 All-Hands-AI/OpenHands</span>
+                        <span class="stat">⭐ 70.8k</span>
+                        <span class="stat">🏷️ DevOps</span>
+                    </div>
+                    
+                    <p><strong>Cross-Repo Testing Skill</strong> 来自 OpenHands（前 OpenDevin）项目，解决了一个经典难题：当功能横跨 SDK 和 Cloud 后端两个仓库时，如何做端到端测试？</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>定义了两种跨仓库测试流程——Flow A（SDK 调用新 Cloud API）和 Flow B（Cloud 使用未发布 SDK），以及两者同时出现的组合场景。包含 Staging 部署、Docker 镜像 Pin、Helm Chart 配置等实战细节。</p>
+                    </div>
+                    
+                    <p><strong>仓库映射：</strong></p>
+                    <ul>
+                        <li><strong>software-agent-sdk</strong> — Agent 核心，SDK/Workspace/Tools 包</li>
+                        <li><strong>OpenHands</strong> — Cloud 后端，FastAPI + 沙箱管理</li>
+                        <li><strong>deploy</strong> — 基础设施，Helm Charts + GitHub Actions</li>
+                    </ul>
+                    
+                    <pre><code># Flow A: SDK 调用新 Cloud API
+1. 在 OpenHands 仓库实现新 API 端点
+2. 推 PR，等 Docker CI 构建 enterprise-server 镜像
+3. 在 SDK 仓库实现客户端代码
+4. 部署 server PR 到 staging
+5. 用 staging URL 运行 SDK 集成测试
+
+# Flow B: Cloud 使用未发布 SDK
+1. 在 SDK 仓库实现新功能
+2. 在 OpenHands 仓库 pin SDK 到未发布 commit
+3. 同时 pin agent-server 镜像到 SDK PR 的构建产物</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/openhands-cross-repo.jpg" alt="OpenHands Cross-Repo Testing GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/All-Hands-AI/OpenHands/tree/main/.agents/skills/cross-repo-testing" target="_blank">github.com/All-Hands-AI/OpenHands</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Skill 5: PR Creator -->
+                <section id="pr-creator" class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">05</span>
+                    </div>
+                    <h2 class="section-title">PR Creator：标准化 Pull Request 创建</h2>
+                    
+                    <div class="stats-inline">
+                        <span class="stat">📦 google-gemini/gemini-cli</span>
+                        <span class="stat">⭐ 139.7k</span>
+                        <span class="stat">🏷️ Development</span>
+                    </div>
+                    
+                    <p><strong>PR Creator Skill</strong> 同样来自 Gemini CLI 项目，确保所有 AI 创建的 Pull Request 都遵循仓库模板和标准。从分支管理到描述填写到预检脚本，一气呵成。</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>💡 核心价值：</strong>解决了 AI 编程助手创建 PR 时的常见问题——忘记切分支、描述不规范、跳过 checklist、没跑预检。这个 Skill 把最佳实践编码为可执行规范。</p>
+                    </div>
+                    
+                    <p><strong>工作流程：</strong></p>
+                    <ul>
+                        <li><strong>分支检查</strong> — 确保不在 main 分支上直接提交</li>
+                        <li><strong>模板定位</strong> — 自动查找 <code>.github/pull_request_template.md</code></li>
+                        <li><strong>描述起草</strong> — 严格遵循模板结构，逐项填写 checklist</li>
+                        <li><strong>预检运行</strong> — <code>npm run preflight</code> 确保 build/lint/test 通过</li>
+                        <li><strong>安全护栏</strong> — 交互式确认，用户明确批准后才推送</li>
+                    </ul>
+                    
+                    <pre><code># 工作流
+1. git branch --show-current  # 确保不在 main
+2. git status                 # 检查未提交变更
+3. 查找 PR 模板
+4. 填写模板（保留所有 heading 和 checklist）
+5. npm run preflight          # 预检
+6. gh pr create               # 创建 PR（需用户确认）
+
+# 安全规则
+- NEVER commit directly to main
+- ALWAYS run preflight before creating PR
+- ALWAYS wait for user confirmation</code></pre>
+                    
+                    <div class="project-screenshot">
+                        <img src="images/gemini-pr-creator.jpg" alt="Gemini CLI PR Creator GitHub" loading="lazy">
+                    </div>
+                    
+                    <div class="project-link">
+                        <span>📂 技能地址：</span>
+                        <a href="https://github.com/google-gemini/gemini-cli/tree/main/.gemini/skills/pr-creator" target="_blank">github.com/google-gemini/gemini-cli</a>
+                    </div>
+                </section>
+                
+                <hr>
+                
+                <!-- Summary -->
+                <section class="project-section">
+                    <div class="section-badge">
+                        <span class="section-number">06</span>
+                    </div>
+                    <h2 class="section-title">总结</h2>
+                    
+                    <p>今天介绍的 5 个 Skills 都来自<strong>知名开源项目</strong>（Gemini CLI、Superpowers、Bun、OpenHands），代表了 Agent Skills 生态中"<strong>质量保障</strong>"这一主题：</p>
+                    
+                    <ul>
+                        <li><strong>AI 行为验证</strong> — Behavioral Evals（验证 Agent 决策）</li>
+                        <li><strong>开发范式</strong> — Subagent-Driven Development（隔离 + 双阶段审查）</li>
+                        <li><strong>测试框架</strong> — Writing Bundler Tests（声明式打包测试）</li>
+                        <li><strong>E2E 测试</strong> — Cross-Repo Testing（跨仓库端到端验证）</li>
+                        <li><strong>流程规范</strong> — PR Creator（标准化 PR 创建）</li>
+                    </ul>
+                    
+                    <p>随着 AI Agent 参与开发的深度增加，"<strong>如何验证 Agent 的行为是否正确</strong>"成为关键课题。本期 Skills 提供了从单元测试到集成测试到行为评估的全方位参考。SkillsMP 已收录 <strong>784,000+</strong> 个 Skills，生态持续壮大。</p>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="report-footer">
+                    <div class="end-badge">
+                        <span>🎯</span>
+                        <span>END</span>
+                        <span>🎯</span>
+                    </div>
+                    <p>Skills新星速报 | 由Neo自动生成<br>更新时间：2026-04-08 12:47 CST</p>
+                </footer>
+            </article>
+        </main>
+        
+        <!-- 右侧边栏：今日技能 -->
+        <aside class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 今日技能</h3>
+            </div>
+            <ul class="project-nav" id="project-nav">
+                <li><a href="#behavioral-evals">Behavioral Evals <span class="stars">⭐139.7k</span></a></li>
+                <li><a href="#subagent-dev">Subagent-Driven Dev <span class="stars">⭐100.6k</span></a></li>
+                <li><a href="#bundler-tests">Bundler Tests <span class="stars">⭐88.9k</span></a></li>
+                <li><a href="#cross-repo-testing">Cross-Repo Testing <span class="stars">⭐70.8k</span></a></li>
+                <li><a href="#pr-creator">PR Creator <span class="stars">⭐139.7k</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="https://skillsmp.com" target="_blank">📦 SkillsMP</a>
+            </div>
+        </aside>
+    </div>
+    
+    <script>
+        // 加载历史报告
+        async function loadHistory() {
+            try {
+                const resp = await fetch('../../reports/manifest.json');
+                const data = await resp.json();
+                const currentDate = '2026-04-08';
+                
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.reports.map(r => `
+                    <li class="nav-item ${r.date === currentDate ? 'active' : ''}">
+                        <a href="../${r.date}/" class="nav-link" onclick="closeSidebar()">
+                            📊 ${r.date}
+                            ${r.date === currentDate ? '<span class="badge">当前</span>' : ''}
+                        </a>
+                    </li>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to load history:', e);
+            }
+        }
+        
+        // 滚动高亮当前技能
+        function setupScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.project-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+        
+        // 侧边栏控制
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('visible');
+            document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+        
+        loadHistory();
+        setupScrollSpy();
+    </script>
+</body>
+</html>
